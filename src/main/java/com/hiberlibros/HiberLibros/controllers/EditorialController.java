@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
- * @author Usuario
+ * @author Isabel
  */
+
 @Controller
 @RequestMapping
 public class EditorialController {

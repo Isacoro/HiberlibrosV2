@@ -13,6 +13,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ *
+ * @author Isabel
+ */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,7 +28,7 @@ public class AutorLibro {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Integer id;
 	  	
-            @ManyToOne(cascade = CascadeType.ALL)
+	  	@ManyToOne(cascade = CascadeType.ALL)
 	    @JoinColumn(name = "id_autor")
 	    private Autor autor;
 	    

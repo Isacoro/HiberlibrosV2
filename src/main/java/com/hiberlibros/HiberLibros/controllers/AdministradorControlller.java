@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- *
- * @author Mohamad
+ * @author Isabel
  */
+
 @Controller
 @RequestMapping("hiberlibros/paneladmin")
 public class AdministradorControlller {

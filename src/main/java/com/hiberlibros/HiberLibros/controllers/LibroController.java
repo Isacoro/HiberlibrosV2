@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.hiberlibros.HiberLibros.service.LibroServiceImpl;
 
+/**
+ *
+ * @author Isabel
+ */
+
 @Controller
 @RequestMapping("/libros")
 public class LibroController {

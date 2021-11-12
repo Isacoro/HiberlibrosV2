@@ -14,6 +14,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ *
+ * @author Isabel
+ */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -35,12 +40,4 @@ public class Autor {
 
     @OneToMany(mappedBy = "autor")
     private List<Libro> libros;
-
-//    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL)//si  se borra autor, se borra relacion de autor_libro
-//    private List<AutorLibro> autorLibros;
-
-//    @Override
-//    public String toString() {
-//        return ""+nombre + " " + apellidos;
-//    }
 }

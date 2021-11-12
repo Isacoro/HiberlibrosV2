@@ -19,6 +19,11 @@ import com.hiberlibros.HiberLibros.service.LibroServiceImpl;
 import com.hiberlibros.HiberLibros.repository.AutorLibroRepository;
 import java.util.stream.Collectors;
 
+/**
+ *
+ * @author Isabel
+ */
+
 @Controller
 @RequestMapping
 public class AutorController {

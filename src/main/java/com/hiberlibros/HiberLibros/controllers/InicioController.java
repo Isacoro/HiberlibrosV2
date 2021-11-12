@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.hiberlibros.HiberLibros.controllers;
 
 import com.hiberlibros.HiberLibros.dtos.BuscaLibroDto;
@@ -42,8 +37,9 @@ import com.hiberlibros.HiberLibros.service.UsuarioServiceImpl;
 
 /**
  *
- * @author Usuario
+ * @author Isabel
  */
+
 @Controller
 @RequestMapping("/hiberlibros")
 public class InicioController {
@@ -58,8 +54,6 @@ public class InicioController {
     private EditorialServiceImpl editoService;
     @Autowired
     private LibroServiceImpl liService;
-    @Autowired
-    private IRelatoService serviceRelato;
     @Autowired
     private UsuarioLibroServiceImpl ulService;
     @Autowired
@@ -120,7 +114,6 @@ public class InicioController {
     public String panelUsuario(Model m, String mail) {
         Usuario u = usuService.usuarioRegistrado(serviceSeguridad.getMailFromContext());
         List<UsuarioLibro> ul = ulService.buscarUsuario(u);
-        m.addAttribute("relatos", serviceRelato.encontrarPorAutor(u));
         m.addAttribute("usuario", u);
         m.addAttribute("libros", ulService.buscarUsuariotiene(u));
         m.addAttribute("misPeticiones", petiService.consutarPeticionesUsuarioPendientes(u));
@@ -209,20 +202,6 @@ public class InicioController {
         return liService.findByTituloContainingIgnoreCase(search).stream()
                 .map(x-> new BuscaLibroDto(x.getId(), x.getTitulo()))
                 .collect(Collectors.toList());
-    }
-
-    @PostMapping("/guardarRelato")
-    public String formularioRelato(Model m, Integer id, Relato relato, MultipartFile ficherosubido) {
-        serviceRelato.guardarRelato(RUTA_BASE, relato, ficherosubido, id);
-        return "redirect:/hiberlibros/panelUsuario";
-    }
-
-    @GetMapping("/relato")
-    public String prueba(Model model, Integer id) {
-        model.addAttribute("generos", serviceGen.getGeneros());
-        model.addAttribute("relatos", serviceRelato.todos());
-        model.addAttribute("usuario", usuService.usuarioId(id));
-        return "principal/relato";
     }
 
     @GetMapping("/borrarUL")//borra un libro de UsuarioLibro sin eliminarlo de la tabla de Libros

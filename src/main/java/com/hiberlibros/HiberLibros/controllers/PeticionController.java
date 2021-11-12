@@ -14,8 +14,9 @@ import com.hiberlibros.HiberLibros.service.UsuarioServiceImpl;
 
 /**
  *
- * @author Usuario
+ * @author Isabel
  */
+
 @Controller
 @RequestMapping("peticion")
 public class PeticionController {

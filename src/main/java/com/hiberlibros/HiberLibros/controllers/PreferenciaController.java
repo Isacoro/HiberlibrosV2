@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  *
  * @author Isabel
  */
+
 @Controller
 @RequestMapping("preferencia")
 public class PreferenciaController {

@@ -16,8 +16,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
- * @author Usuario
+ * @author Isabel
  */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -44,7 +45,4 @@ public class Intercambio {
     @ManyToOne
     @JoinColumn(name="id_usuario_libro_prestatario")
     private UsuarioLibro usuarioPrestatario;
-    
-
-
 }

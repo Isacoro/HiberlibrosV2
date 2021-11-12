@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
  *
  * @author Isabel
  */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,12 +31,8 @@ public class Genero {
     private Boolean desactivado;
 
     @OneToMany(mappedBy = "id")
-    private List<Relato> listaRelatos;
-
-    @OneToMany(mappedBy = "id")
     private List<Libro> listaLibros;
 
     @OneToMany(mappedBy = "id")
     private List<Preferencia> listaPreferencias;
-
 }

@@ -17,13 +17,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
+/**
+ *
+ * @author Isabel
+ */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "eventos")
 public class Evento {
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @DateTimeFormat(pattern = "yyyy-MM-dd")    
@@ -33,8 +38,7 @@ public class Evento {
     @DateTimeFormat(pattern = "yyyy-MM-dd")    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date endDate;
-    
-    
+
     private String summary;
     
 }
